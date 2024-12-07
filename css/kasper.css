@@ -1,3 +1,9 @@
+/* Start Global Variables */
+:root {
+    --main-color: #02bced;
+}
+
+/* End Global Variables */
 /* Start Global Rules */
 * {
     -ms-box-sizing: border-box;
@@ -63,3 +69,120 @@ ul {
 }
 
 /* End Global Rules */
+
+/* Start header */
+header {
+    background-color: #1f2021;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 2;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 98px;
+}
+
+header .container::after {
+    content: "";
+    background-color: #726f71;
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 1px;
+    left: 15px;
+    bottom: 0;
+}
+
+header .container a img {
+    height: 40px;
+}
+
+header .container nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    header .container nav i.toggle-menue {
+        display: none;
+    }
+}
+
+header .container nav ul {
+    display: flex;
+}
+
+header .container nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+    padding: 40px 10px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+header .container nav ul li a.active,
+header .container nav ul li a:hover {
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+}
+
+@media (max-width: 767px) {
+    header .container nav ul {
+        display: none;
+    }
+
+    header .container nav i.toggle-menue {
+        display: block;
+    }
+
+    header .container nav i.toggle-menue:hover + ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        background-color: rgb(0, 0, 0, 50%);
+        left: 0;
+    }
+
+    header .container nav ul li a {
+        padding: 15px !important;
+    }
+}
+
+header .container nav .form {
+    width: 40px;
+    height: 30px;
+    margin-left: 30px;
+    border-left: 1px solid #fff;
+    position: relative;
+}
+
+header .container nav .form i {
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+
+/* End header */
